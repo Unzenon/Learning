@@ -1,0 +1,28 @@
+{
+    "name": "venture/letter",
+    "description": "",
+    "authors": [
+        {
+            "name": "Joni Chandra",
+            "email": "jonquihote@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Venture\\Letter\\": "app/",
+            "Venture\\Letter\\Database\\Factories\\": "database/factories/",
+            "Venture\\Letter\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Venture\\Letter\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Letter",
+    "alias": "letter",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": ["Venture\\Letter\\Providers\\LetterServiceProvider"],
+    "files": []
+}
