@@ -6,22 +6,23 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
-class LetterReceipt extends Model
+class LetterReceiptNote extends Model
 {
     protected $fillable = [
         'date',
-        'received_from',
-        'amount',
-        'payment_for',
-        'created_by',
+        'day',
+        'from',
+        'to',
+        'notes',
+        'user_id',
     ];
 
-    protected $table = 'letter_receipts';
+    protected $table = 'letter_receipt_notes';
 
     protected static function booted(): void
     {
-        static::creating(function ($receipt) {
-            $receipt->created_by = auth()->id();
+        static::creating(function ($model) {
+            $model->user_id = auth()->id();
         });
     }
 
@@ -32,6 +33,11 @@ class LetterReceipt extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(\Venture\Home\Models\User::class);
+    }
+
+    public function entries()
+    {
+        return $this->hasMany(LetterReceiptNoteEntry::class);
     }
 }

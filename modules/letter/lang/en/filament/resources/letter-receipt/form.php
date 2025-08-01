@@ -12,51 +12,20 @@ return [
 
         'received_from' => [
 
-            'label' => 'Diterima',
+            'label' => 'Sudah Terima Dari',
 
         ],
 
-        // 'emails' => [
+        'amount' => [
 
-        //     'label' => 'Emails',
-        //     'add-action-label' => 'Add email',
+            'label' => 'Jumlah',
 
-        //     'validation-messages' => [
+        ],
 
-        //         'at-least-one-true' => 'User is required to have at least one primary email.',
+        'payment_for' => [
 
-        //     ],
+            'label' => 'Untuk Pembayaran',
 
-        // ],
-
-        // 'roles' => [
-
-        //     'label' => 'Roles',
-
-        // ],
-
+        ],
     ],
-
-    // 'fields' => [
-
-    //     'name' => [
-
-    //         'label' => 'Name',
-
-    //     ],
-
-    //     'password' => [
-
-    //         'label' => 'Password',
-
-    //     ],
-
-    //     'password_confirmation' => [
-
-    //         'label' => 'Confirm Password',
-
-    //     ],
-
-    // ],
-
 ];

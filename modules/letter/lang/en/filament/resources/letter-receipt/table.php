@@ -10,13 +10,35 @@ return [
 
         ],
 
-        'received_from' => [
+        'date' => [
 
-            'label' => 'Diterima Oleh',
+            'label' => 'Tanggal',
 
         ],
 
+        'received_from' => [
 
+            'label' => 'Sudah Terima Dari',
+
+        ],
+
+        'amount' => [
+
+            'label' => 'Uang Sebesar',
+
+        ],
+
+        'payment_for' => [
+
+            'label' => 'Untuk Pembayaran',
+
+        ],
+
+        'preview' => [
+
+            'label' => 'Preview',
+
+        ],
 
     ],
 
