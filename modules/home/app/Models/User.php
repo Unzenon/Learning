@@ -3,25 +3,26 @@
 namespace Venture\Home\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Database\Eloquent\Attributes\UseFactory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Foundation\Auth\Access\Authorizable;
+use Venture\Letter\Models\LetterRole;
 use Spatie\Permission\Traits\HasRoles;
-use Venture\Aeon\Notifications\Notifiable;
-use Venture\Home\Database\Factories\UserFactory;
 use Venture\Home\Enums\MigrationsEnum;
+use Illuminate\Database\Eloquent\Model;
+use Venture\Aeon\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
 use Venture\Home\Enums\UserCredentialTypesEnum;
+use Venture\Home\Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Venture\Home\Events\Models\UserEvent\UserCreatedEvent;
 use Venture\Home\Events\Models\UserEvent\UserDeletedEvent;
 use Venture\Home\Events\Models\UserEvent\UserUpdatedEvent;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
 #[UseFactory(UserFactory::class)]
 class User extends Model implements AuthenticatableContract, AuthorizableContract, FilamentUser

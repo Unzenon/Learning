@@ -2,7 +2,6 @@
 
 namespace Venture\Letter\Filament\Resources;
 
-use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;

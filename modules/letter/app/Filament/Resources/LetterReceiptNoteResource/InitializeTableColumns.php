@@ -8,9 +8,8 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\BulkActionGroup;
-use Venture\Letter\Models\LetterReceiptNote;
 use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\Action as TableAction;
+use Venture\Letter\Filament\Resources\LetterReceiptNoteResource\Actions\PreviewAction;
 
 class InitializeTableColumns extends Action
 {
@@ -67,11 +66,8 @@ class InitializeTableColumns extends Action
             ->actions([
                 EditAction::make(),
                 DeleteAction::make(),
-                TableAction::make('preview')
-                    ->label("{$this->langPre}.columns.preview.label")
-                    ->icon('heroicon-o-eye')
-                    ->url(fn(LetterReceiptNote $record) => route('@letter.letter.notes.preview_receipt_note', $record))
-                    ->openUrlInNewTab()
+                PreviewAction::make(),
+
             ])
             ->bulkActions([
                 BulkActionGroup::make([

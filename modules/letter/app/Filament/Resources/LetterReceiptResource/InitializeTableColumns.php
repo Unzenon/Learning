@@ -3,7 +3,6 @@
 namespace Venture\Letter\Filament\Resources\LetterReceiptResource;
 
 use Filament\Tables\Table;
-use Filament\Tables\Actions\Action as TableAction;
 use Lorisleiva\Actions\Action;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
@@ -11,6 +10,8 @@ use Venture\Letter\Models\LetterReceipt;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\Action as TableAction;
+use Venture\Letter\Filament\Resources\LetterReceiptResource\Actions\PreviewAction;
 
 class InitializeTableColumns extends Action
 {
@@ -57,11 +58,8 @@ class InitializeTableColumns extends Action
             ->actions([
                 EditAction::make(),
                 DeleteAction::make(),
-                TableAction::make('preview')
-                    ->label("{$this->langPre}.columns.preview.label")
-                    ->icon('heroicon-o-eye')
-                    ->url(fn(LetterReceipt $record) => route('@letter.letter.receipts.preview_receipt', $record))
-                    ->openUrlInNewTab()
+                PreviewAction::make(),
+
             ])
             ->bulkActions([
                 BulkActionGroup::make([

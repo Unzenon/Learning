@@ -2,9 +2,8 @@
 
 namespace Venture\Letter\Models;
 
-use Illuminate\Foundation\Auth\User;
+use Venture\Home\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 
 class LetterReceiptNote extends Model
 {
@@ -26,14 +25,10 @@ class LetterReceiptNote extends Model
         });
     }
 
-    // public static function getEloquentQuery(): Builder
-    // {
-    //     return parent::getEloquentQuery()->with('user');
-    // }
 
     public function user()
     {
-        return $this->belongsTo(\Venture\Home\Models\User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function entries()

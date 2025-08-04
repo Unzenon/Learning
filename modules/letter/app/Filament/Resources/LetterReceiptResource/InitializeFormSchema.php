@@ -3,18 +3,11 @@
 namespace Venture\Letter\Filament\Resources\LetterReceiptResource;
 
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Group;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Lorisleiva\Actions\Action;
-use Venture\Inventory\Models\Item;
 
 class InitializeFormSchema extends Action
 {

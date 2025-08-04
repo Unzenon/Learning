@@ -2,20 +2,15 @@
 
 namespace Venture\Letter\Filament\Resources\LetterReceiptNoteResource;
 
-use Filament\Forms\Get;
 use Filament\Forms\Form;
 use Lorisleiva\Actions\Action;
-use Venture\Inventory\Models\Item;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Placeholder;
 
 class InitializeFormSchema extends Action
 {
@@ -58,7 +53,7 @@ class InitializeFormSchema extends Action
                         ->required()
                         ->translateLabel(),
 
-                    Textarea::make('notes')
+                    TextArea::make('notes')
                         ->label("{$this->langPre}.fields.notes.label")
                         ->rows(3)
                         ->required()
@@ -67,8 +62,6 @@ class InitializeFormSchema extends Action
 
                 // Baris 3
                 Repeater::make('entries')
-                    ->label("{$this->langPre}.fields.entries.label")
-                    ->relationship()
                     ->schema([
                         Grid::make(2)->schema([
                             DatePicker::make('invoice_date')->label('Tanggal Invoice')->required(),

@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create(MigrationsEnum::LETTER_RECEIPT_NOTE_ENTRIES->table(), function (Blueprint $table) {
             $table->id();
-            $table->foreignId('letter_receipt_note_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('letter_receipt_note_id')->constrained(MigrationsEnum::LETTER_RECEIPT_NOTES->table())()->cascadeOnDelete()->cascadeOnUpdate();
             $table->date('invoice_date');
             $table->string('invoice_number');
             $table->decimal('amount', 15, 2);
